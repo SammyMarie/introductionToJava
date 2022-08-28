@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id "io.freefair.lombok" version "${lombokVersion}"
+}
+
+group 'com.sammy'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation "org.mockito:mockito-junit-jupiter:${mockitoVersion}"
+    testImplementation "org.assertj:assertj-core:${assertjVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter:${junitVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}
