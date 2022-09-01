@@ -6,7 +6,7 @@ import java.util.Scanner;
 import static com.sammy.arrays.twoAndMultiDimensional.Load2DArray.display2DElements;
 import static com.sammy.arrays.twoAndMultiDimensional.Load2DArray.randomlyPopulate2DArray;
 
-public class MultiArrayInitializationAndDisplay {
+public class TwoDimensionArrayInitializationAndDisplay {
 
     private static void createAndLoad2DArray() {
         double[][] distances = {{0, 983, 787, 714, 1375, 967, 1087},
