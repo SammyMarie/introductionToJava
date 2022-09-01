@@ -1,4 +1,4 @@
-package com.sammy.arrays.twoAndMultiDimensional.caseStudies;
+package com.sammy.arrays.twoAndMultiDimensional.caseStudies.twoDArray;
 
 import java.util.Scanner;
 import java.util.stream.IntStream;
