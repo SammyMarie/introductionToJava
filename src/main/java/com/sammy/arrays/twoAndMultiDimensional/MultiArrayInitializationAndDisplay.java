@@ -1,5 +1,6 @@
 package com.sammy.arrays.twoAndMultiDimensional;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import static com.sammy.arrays.twoAndMultiDimensional.Load2DArray.display2DElements;
@@ -24,11 +25,7 @@ public class MultiArrayInitializationAndDisplay {
 
     private static void userInput2DArrayValues(Scanner userInput, int[][] matrix){
         System.out.println("Enter " + matrix.length + " rows and " + matrix[0].length + " columns");
-        for(int row = 0; row < matrix.length; row++){
-            for(int column = 0; column < matrix[row].length; column++){
-                matrix[row][column] = userInput.nextInt();
-            }
-        }
+        Arrays.stream(matrix).forEach(rows -> Arrays.setAll(rows, column -> userInput.nextInt()));
         display2DElements(matrix);
     }
 
