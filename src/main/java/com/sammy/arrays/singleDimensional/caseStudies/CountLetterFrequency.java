@@ -1,5 +1,7 @@
 package com.sammy.arrays.singleDimensional.caseStudies;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.IntStream;
@@ -43,7 +45,12 @@ public class CountLetterFrequency {
     }
 
     private static void displayLetterCount(Map<Character, Integer> lettersAndFrequency){
+        Character maxOccurrences = Collections.max(lettersAndFrequency.entrySet(),
+                                                   Comparator.comparingInt(Map.Entry::getValue))
+                                              .getKey();
+
         lettersAndFrequency.forEach((key, value) -> System.out.println(key + " occurs " + value + " times "));
+        System.out.println("One with most occurrences " + maxOccurrences);
     }
 
     public static void main(String[] args) {
