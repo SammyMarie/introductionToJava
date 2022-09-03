@@ -2,15 +2,19 @@ package com.sammy.recursion;
 
 public class PalindromeSubstringSolution {
     private static boolean isPalindrome(String word){
+
+        return isPalindrome(word, 0, word.length() - 1);
+    }
+
+    private static boolean isPalindrome(String word, int startPoint, int endPoint) {
         boolean isWordPalindrome;
-        if(word.length() <= 1){
+        if(endPoint <= startPoint){
             isWordPalindrome = true;
-        }else if(word.charAt(0) != word.charAt(word.length() - 1)){
+        }else if(word.charAt(startPoint) != word.charAt(endPoint)){
             isWordPalindrome = false;
         }else{
-            isWordPalindrome = isPalindrome(word.substring(1, word.length() - 1));
+            isWordPalindrome = isPalindrome(word, startPoint + 1, endPoint - 1);
         }
-
         return isWordPalindrome;
     }
 
