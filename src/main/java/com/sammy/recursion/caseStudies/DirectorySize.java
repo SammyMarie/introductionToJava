@@ -2,6 +2,7 @@ package com.sammy.recursion.caseStudies;
 
 import java.io.File;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 import static java.util.Objects.requireNonNull;
 
@@ -10,9 +11,9 @@ public class DirectorySize {
         long totalDirectorySize = 0;
         if(file.isDirectory()){
             File[] files = file.listFiles();
-            for(int index = 0; index < requireNonNull(files).length; index++){
-                totalDirectorySize += retrieveSize(files[index]);
-            }
+            totalDirectorySize = IntStream.range(0, requireNonNull(files).length)
+                                          .mapToLong(index -> retrieveSize(files[index]))
+                                          .sum();
         }else{
             totalDirectorySize += file.length();
         }
