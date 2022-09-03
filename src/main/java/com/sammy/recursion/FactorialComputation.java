@@ -4,11 +4,15 @@ import java.util.Scanner;
 
 public class FactorialComputation {
     private static long computeFactorial(int number){
+        return computeFactorial(number, 1);
+    }
+
+    private static long computeFactorial(int number, int result){
         long factorial;
         if(number == 0){
-            factorial = 1;
+            factorial = result;
         }else{
-            factorial = number * computeFactorial(number - 1);
+            factorial = computeFactorial(number - 1, number * result);
         }
 
         return factorial;
